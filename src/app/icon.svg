@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#153a5b" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background Squircle Badge -->
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="#FFFFFF" stroke="#E4EBE7" stroke-width="3" filter="url(#shadow)" />
+  <rect x="7" y="7" width="114" height="114" rx="27" fill="#FBFDFC" />
+
+  <!-- Centered CFTInd Emblem (Pencil with Sprouting Leaves) -->
+  <g transform="translate(37.75, 16) scale(0.75)">
+    <!-- Yellow Leaf (Sparks of Creativity) -->
+    <path d="M31 48C9 45 4 27 7 11c20-2 30 19 24 37Z" fill="#F8BE3D" />
+    
+    <!-- Green Leaf (Growing Potential) -->
+    <path d="M38 48C38 20 53 6 68 3c2 27-10 44-30 45Z" fill="#278C57" />
+    
+    <!-- Navy Pencil Body -->
+    <path d="M28 51h18v48H28Z" fill="#153A5B" />
+    
+    <!-- Peach Sharpened Wood -->
+    <path d="M28 99l9 24 9-24Z" fill="#F8D6B3" />
+    
+    <!-- Pencil Graphite Tip -->
+    <path d="m34 114 3 9 4-9Z" fill="#153A5B" />
+    
+    <!-- White Pencil Center Groove -->
+    <path d="M37 51v48" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>

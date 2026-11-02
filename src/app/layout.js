@@ -13,18 +13,86 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cftind.my.id";
+
 export const metadata = {
-  title: "CFTInd — Menumbuhkan Kreativitas Bersama Guru",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "CFTInd — Menumbuhkan Kreativitas Bersama Guru",
+    template: "%s | CFTInd",
+  },
   description:
-    "Platform asesmen dan riset yang berfokus pada perilaku guru dalam menumbuhkan kreativitas peserta didik. Kenali praktik mengajar yang mendukung tumbuhnya kreativitas.",
-  keywords: "CFTInd, kreativitas guru, asesmen guru, riset pendidikan, CFTIndex",
-  authors: [{ name: "Tim CFTInd" }],
+    "Platform asesmen dan riset perilaku guru dalam menumbuhkan kreativitas peserta didik (CFTIndex Bahasa Indonesia). Refleksi pedagogis lintas jenjang pendidikan.",
+  keywords: [
+    "CFTInd",
+    "CFTIndex",
+    "kreativitas guru",
+    "asesmen guru",
+    "riset pendidikan",
+    "pedagogi kreatif",
+    "Kurikulum Merdeka",
+    "Cropley",
+    "Soh",
+  ],
+  authors: [{ name: "Tim Riset CFTInd", url: siteUrl }],
+  creator: "Tim Riset CFTInd",
+  publisher: "CFTInd",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
   openGraph: {
     title: "CFTInd — Menumbuhkan Kreativitas Bersama Guru",
     description:
-      "Platform asesmen dan riset yang berfokus pada perilaku guru dalam menumbuhkan kreativitas peserta didik.",
+      "Kenali 9 dimensi perilaku mengajar yang memupuk daya cipta siswa. Platform asesmen & riset CFTIndex adaptasi Bahasa Indonesia.",
+    url: siteUrl,
+    siteName: "CFTInd",
     locale: "id_ID",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CFTInd — Menumbuhkan Kreativitas Bersama Guru",
+        type: "image/png",
+      },
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CFTInd — Menumbuhkan Kreativitas Bersama Guru",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CFTInd — Menumbuhkan Kreativitas Bersama Guru",
+    description:
+      "Kenali 9 dimensi perilaku mengajar yang memupuk daya cipta siswa. Platform asesmen & riset CFTIndex adaptasi Bahasa Indonesia.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  other: {
+    "theme-color": "#278C57",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
   },
 };
 
@@ -34,7 +102,9 @@ export default function RootLayout({ children }) {
       lang="id"
       className={`${dmSans.variable} ${plusJakarta.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased bg-white text-navy2">
+        {children}
+      </body>
     </html>
   );
 }
