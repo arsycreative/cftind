@@ -1,0 +1,41 @@
+name: Supabase Keep-Alive Ping
+
+on:
+  # Berjalan otomatis setiap 3 hari sekali pukul 03:00 UTC (10:00 WIB)
+  # Supabase free-tier menjeda project setelah 7 hari tidak aktif,
+  # interval 3 hari memastikan Supabase tidak akan pernah terjeda.
+  schedule:
+    - cron: '0 3 */3 * *'
+  
+  # Memungkinkan pemicuan manual dari tab Actions di GitHub kapan saja
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    name: Ping Supabase Database & Health Endpoint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Jalankan Keep-Alive Ping Script
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || secrets.SUPABASE_URL || 'https://qhxmasmcoohlbyderywn.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://cftind.my.id' }}
+        run: |
+          node scripts/keepalive.js
+
+      - name: Direct Fallback Health Ping
+        run: |
+          echo "Menjalankan fallback ping ke https://cftind.my.id/api/health..."
+          curl -s -o /dev/null -w "HTTP Status: %{http_code}\n" https://cftind.my.id/api/health || true
