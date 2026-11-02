@@ -1,11 +1,11 @@
 name: Supabase Keep-Alive Ping
 
 on:
-  # Berjalan otomatis setiap 3 hari sekali pukul 03:00 UTC (10:00 WIB)
+  # Berjalan otomatis setiap 5 hari sekali pukul 03:00 UTC (10:00 WIB)
   # Supabase free-tier menjeda project setelah 7 hari tidak aktif,
-  # interval 3 hari memastikan Supabase tidak akan pernah terjeda.
+  # interval 5 hari memastikan Supabase selalu aktif sebelum batas jeda 7 hari.
   schedule:
-    - cron: '0 3 */3 * *'
+    - cron: '0 3 */5 * *'
   
   # Memungkinkan pemicuan manual dari tab Actions di GitHub kapan saja
   workflow_dispatch:
