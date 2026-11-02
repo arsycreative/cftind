@@ -5,8 +5,9 @@ import CFTIndLogo from "./CFTIndLogo";
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { href: "/#tentang", label: "Tentang Kami" },
-  { href: "/#layanan", label: "Layanan" },
+  { href: "/#tentang", label: "Tentang" },
+  { href: "/#dimensi", label: "9 Dimensi" },
+  { href: "/#simulasi", label: "Coba Simulasi" },
   { href: "/#filosofi", label: "Filosofi" },
   { href: "/#faq", label: "FAQ" },
 ];
