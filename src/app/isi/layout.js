@@ -10,6 +10,9 @@ export const metadata = {
     "riset pendidikan guru",
     "perilaku mengajar kreatif",
   ],
+  alternates: {
+    canonical: "/isi",
+  },
   openGraph: {
     title: "Kuesioner CFTInd — Menumbuhkan Kreativitas Bersama Guru",
     description:

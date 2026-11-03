@@ -2,8 +2,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Kontak — CFTInd",
-  description: "Hubungi tim peneliti CFTInd untuk pertanyaan atau permohonan penghapusan data.",
+  title: "Kontak & Layanan Peneliti",
+  description:
+    "Hubungi tim peneliti platform CFTInd untuk pertanyaan riset, kolaborasi akademik, atau permohonan penarikan data sesuai UU PDP.",
+  alternates: {
+    canonical: "/kontak",
+  },
+  openGraph: {
+    title: "Kontak & Layanan Peneliti | CFTInd",
+    description:
+      "Hubungi tim peneliti platform CFTInd untuk pertanyaan riset, kolaborasi akademik, atau permohonan penarikan data sesuai UU PDP.",
+    url: "/kontak",
+  },
 };
 
 export default function KontakPage() {

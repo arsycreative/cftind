@@ -2,8 +2,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Kebijakan Privasi — CFTInd",
-  description: "Kebijakan privasi dan perlindungan data responden platform CFTInd.",
+  title: "Kebijakan Privasi & Perlindungan Data",
+  description:
+    "Kebijakan privasi dan perlindungan data responden platform CFTInd sesuai prinsip etika riset dan UU No. 27/2022 (UU PDP).",
+  alternates: {
+    canonical: "/kebijakan-privasi",
+  },
+  openGraph: {
+    title: "Kebijakan Privasi & Perlindungan Data | CFTInd",
+    description:
+      "Kebijakan privasi dan perlindungan data responden platform CFTInd sesuai prinsip etika riset dan UU No. 27/2022 (UU PDP).",
+    url: "/kebijakan-privasi",
+  },
 };
 
 export default function KebijakanPrivasiPage() {
