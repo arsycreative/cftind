@@ -2,7 +2,7 @@ import Link from "next/link";
 import CFTIndLogo from "@/components/CFTIndLogo";
 
 export const metadata = {
-  title: "Halaman Tidak Ditemukan (404) | CFTInd",
+  title: "Halaman Tidak Ditemukan (404)",
   description: "Halaman yang Anda cari tidak ditemukan atau telah dipindahkan.",
 };
 

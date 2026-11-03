@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Admin — CFTInd",
-  description: "Panel admin CFTInd",
+  title: "Panel Admin",
+  description: "Panel admin platform CFTInd",
 };
 
 export default function AdminPage() {
